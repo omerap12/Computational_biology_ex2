@@ -11,5 +11,4 @@ def load_freq_words(filename):
 
 if __name__ == '__main__':
     filename = "dict.txt"
-    words = load_words(filename)
-    
+    words = load_freq_words(filename)
