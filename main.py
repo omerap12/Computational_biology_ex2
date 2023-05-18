@@ -40,3 +40,4 @@ def decode_sentence(sentence, decoding_dict):
 
 if __name__ == '__main__':
     print("Omer Aplatony")
+
