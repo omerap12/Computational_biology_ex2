@@ -49,6 +49,6 @@ class Data_utils:
     def get_letters2_freq(self) -> dict:
         return self.dict_letters2
 
-if __name__ == '__main__':
-    d = Data_utils()
-    d.print_data()
+# if __name__ == '__main__':
+#     d = Data_utils()
+#     d.print_data()
