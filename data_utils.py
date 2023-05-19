@@ -3,6 +3,7 @@ class Data_utils:
         self.list_words = None
         self.dict_letters = None
         self.dict_letters2 = None
+        self.load_data()
     
     def load_data(self) -> None:
         self.list_words = self.load_freq_words('dict.txt')
@@ -50,5 +51,4 @@ class Data_utils:
 
 if __name__ == '__main__':
     d = Data_utils()
-    d.load_data()
     d.print_data()
