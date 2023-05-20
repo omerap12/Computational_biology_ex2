@@ -1,11 +1,13 @@
 class Data_utils:
     def __init__(self) -> None:
+        self.encrypted_text = None
         self.list_words = None
         self.dict_letters = None
         self.dict_letters2 = None
         self.load_data()
     
     def load_data(self) -> None:
+        self.encrypted_text = self.load_encrypted_text('enc.txt')
         self.list_words = self.load_freq_words('dict.txt')
         self.dict_letters = self.load_letters_freq('Letter_Freq.txt')
         self.dict_letters2 = self.load_letters_freq('Letter2_Freq.txt')
@@ -39,6 +41,10 @@ class Data_utils:
                     value = float(parts[0])
                     data_dict[key] = value
         return data_dict
+
+    def load_encrypted_text(self, filename) -> str:
+        with open(filename, 'r') as f:
+            return f.read()
     
     def get_words(self) -> list:
         return self.list_words
@@ -48,6 +54,9 @@ class Data_utils:
     
     def get_letters2_freq(self) -> dict:
         return self.dict_letters2
+
+    def get_encrypted_text(self) -> str:
+        return self.encrypted_text
 
 # if __name__ == '__main__':
 #     d = Data_utils()
