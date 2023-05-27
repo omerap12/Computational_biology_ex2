@@ -14,7 +14,7 @@ STOP_NO_CHANGE = 30
 TOO_MUCH_GENERATIONS = 100
 STARTERS = 5
 LAMARC = 10
-DARWIN = 2
+DARWIN = 10
 
 
 class GeneticAlgorithm:
@@ -212,7 +212,7 @@ if __name__ == '__main__':
         i += 1
         print("run number: " + str(i))
         algorithm = GeneticAlgorithm()
-        outputs.append(algorithm.next_generation(lamrac=True, darwin=False))
+        outputs.append(algorithm.next_generation(lamrac=False, darwin=False))
         print("Best fitness is - " + str(algorithm.best_fitness))
         print("Best generation is - " + str(algorithm.best_generation))
         print("Number of fitness calls is - " + str(algorithm.count_iters))
