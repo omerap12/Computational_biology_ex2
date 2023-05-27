@@ -39,12 +39,12 @@ class Data_utils:
                     parts = line.split('\t')
                     key = parts[1]
                     value = float(parts[0])
-                    data_dict[key] = value
+                    data_dict[key.lower()] = value
         return data_dict
 
     def load_encrypted_text(self, filename) -> str:
-        with open(filename, 'r') as f:
-            return f.read()
+        with open(filename, 'r') as file:
+            return file.read()
     
     def get_words(self) -> list:
         return self.list_words
