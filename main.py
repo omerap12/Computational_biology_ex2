@@ -2,6 +2,7 @@ import random
 import string
 import time
 from data_utils import Data_utils
+import sys
 
 
 POPULATION_SIZE = 100
@@ -13,8 +14,8 @@ LOCAL_MAXIMUM = 10
 STOP_NO_CHANGE = 30
 TOO_MUCH_GENERATIONS = 100
 STARTERS = 5
-LAMARC = 10
-DARWIN = 10
+LAMARC = 5
+DARWIN = 2
 
 
 class GeneticAlgorithm:
@@ -208,11 +209,17 @@ if __name__ == '__main__':
     outputs = []
     algorithm = None
     i = 0
+    lamarc_val = False
+    darwin_val = False
+    if sys.argv[1] == "1":
+        lamarc_val = True
+    if sys.argv[2] == "1":
+        darwin_val = True
     while STARTERS > 0:
         i += 1
         print("run number: " + str(i))
         algorithm = GeneticAlgorithm()
-        outputs.append(algorithm.next_generation(lamrac=False, darwin=False))
+        outputs.append(algorithm.next_generation(lamrac=lamarc_val, darwin=darwin_val))
         print("Best fitness is - " + str(algorithm.best_fitness))
         print("Best generation is - " + str(algorithm.best_generation))
         print("Number of fitness calls is - " + str(algorithm.count_iters))
